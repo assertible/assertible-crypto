@@ -1,0 +1,25 @@
+name: assertible-crypto
+
+dependencies:
+  - asn1-encoding
+  - base
+  - base64-bytestring
+  - cryptonite
+  - x509
+  - text
+  - bytestring
+  - asn1-types
+  - postgresql-simple
+  - memory
+  - uuid-types
+
+library:
+  source-dirs: src
+
+tests:
+  spec:
+    main: Spec.hs
+    source-dirs: test
+    dependencies:
+      - assertible-crypto
+      - hspec == 2.*
