@@ -1,0 +1,60 @@
+cabal-version: 1.12
+
+-- This file has been generated from package.yaml by hpack version 0.34.2.
+--
+-- see: https://github.com/sol/hpack
+
+name:           assertible-crypto
+version:        0.0.0
+build-type:     Simple
+
+library
+  exposed-modules:
+      Assertible.Crypto.AES
+      Assertible.Crypto.RSA
+      Assertible.Crypto.Sql.ApiEncryptionKey
+      Assertible.Crypto.Sql.Migration
+      Assertible.Crypto.Util
+  other-modules:
+      Paths_assertible_crypto
+  hs-source-dirs:
+      src
+  build-depends:
+      asn1-encoding
+    , asn1-types
+    , base
+    , base64-bytestring
+    , bytestring
+    , cryptonite
+    , memory
+    , postgresql-simple
+    , text
+    , uuid-types
+    , x509
+  default-language: Haskell2010
+
+test-suite spec
+  type: exitcode-stdio-1.0
+  main-is: Spec.hs
+  other-modules:
+      Assertible.Crypto.AESSpec
+      Assertible.Crypto.RSASpec
+      Assertible.Crypto.Sql.ApiEncryptionKeySpec
+      Paths_assertible_crypto
+  hs-source-dirs:
+      test
+  build-depends:
+      asn1-encoding
+    , asn1-types
+    , assertible-crypto
+    , base
+    , base64-bytestring
+    , bytestring
+    , cryptonite
+    , hspec ==2.*
+    , memory
+    , postgresql-simple
+    , text
+    , uuid-types
+    , x509
+  default-language: Haskell2010
